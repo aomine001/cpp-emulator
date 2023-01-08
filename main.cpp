@@ -1,5 +1,4 @@
 #include <iostream>
-#include <string>
 
 // Registers
 uint8_t A = 0;
@@ -29,30 +28,30 @@ bool SMALLER = false;
 */
 
 // Instructions:
-const unsigned int NOP = 0x00; // nop
-const unsigned int LDA = 0x01; // load to A
-const unsigned int LDB = 0x02; // load to B
-const unsigned int JMP = 0x03; // jump to memory. using 16 bit value
-const unsigned int INA = 0x04; // increment register A
-const unsigned int INB = 0x05; // increment register B
-const unsigned int DEA = 0x06; // decrement register A
-const unsigned int DEB = 0x07; // decrement register B
-const unsigned int CMP = 0x08; // compare register A and B
-const unsigned int JE = 0x09;  // jump if equal
-const unsigned int JNE = 0x0a; // jump if not equal
-const unsigned int JB = 0x0b;  // jump if a is bigger
-const unsigned int JNB = 0x0c; // jump if b is bigger
-const unsigned int ADD = 0x0d; // add register a and b and save it to register a
-const unsigned int SUB = 0x0e; // substract register a and b and save it to register a
-const unsigned int MUL = 0x0f; // multiply register a and b and save it to register a
-const unsigned int DIV = 0x10; // divide register a and register b and save it register a
-const unsigned int SWP = 0x11; // swap register A and register B
-const unsigned int HLT = 0x12; // halt emulation
-const unsigned int PUSH = 0x13; // push register A to stack
-const unsigned int POP = 0x14; // pop to register A from stack
-const unsigned int SSP = 0x15; // set stack pointer
-const unsigned int SST = 0x16; // set stack top (limit where incrementation will stop)
-const unsigned int SSB = 0x17; // set stack bottom (limit where decrementation will stop)
+#define NOP 0x00; // nop
+#define LDA 0x01; // load to A
+#define LDB 0x02; // load to B
+#define JMP 0x03; // jump to memory. using 16 bit value
+#define INA 0x04; // increment register A
+#define INB 0x05; // increment register B
+#define DEA 0x06; // decrement register A
+#define DEB 0x07; // decrement register B
+#define CMP 0x08; // compare register A and B
+#define JE 0x09;  // jump if equal
+#define JNE 0x0a; // jump if not equal
+#define JB 0x0b;  // jump if a is bigger
+#define JNB 0x0c; // jump if b is bigger
+#define ADD 0x0d; // add register a and b and save it to register a
+#define SUB 0x0e; // substract register a and b and save it to register a
+#define MUL 0x0f; // multiply register a and b and save it to register a
+#define DIV 0x10; // divide register a and register b and save it register a
+#define SWP 0x11; // swap register A and register B
+#define HLT 0x12; // halt emulation
+#define PUSH = 0x13; // push register A to stack
+#define POP = 0x14; // pop to register A from stack
+#define SSP = 0x15; // set stack pointer
+#define SST = 0x16; // set stack top (limit where incrementation will stop)
+#define SSB = 0x17; // set stack bottom (limit where decrementation will stop)
 
 // Program code
 uint8_t Program[0xffff] = {
